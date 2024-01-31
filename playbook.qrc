@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resources/logo.ico</file>
+        <file>resources/close-button.ico</file>
+    </qresource>
+</RCC>
