@@ -2,6 +2,11 @@
 #define PLAYBOOK_H
 
 #include <QDialog>
+#include <vector>
+
+#define MAX_MEMBERS 7
+#define MIN_MEMBERS 3
+#define DEFAULT_MEMBERS 5
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class playbook; }
@@ -14,12 +19,17 @@ class playbook : public QDialog
 public:
     playbook(QWidget *parent = nullptr);
     ~playbook();
+//    void Init();
 
 private slots:
     void on_closeBt_clicked();
+    void on_chkNoCenter_stateChanged(int checked);
+    void on_chkCenterReceive_stateChanged(int checked);
 
 private:
     Ui::playbook *ui;
+    const std::vector<QString> playType = {"Pass", "Run", "RPO", "Others"};
+    int getNumWR();
     QPoint m_dragPosition;
 
 protected:
